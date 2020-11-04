@@ -1,11 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import UserProfileContextProvider  from "../../lib/UserProfileContext"
 import { Navbar  } from '../../components'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { CartPage } from './Cart'
 import { Home } from './Home'
-import { Checkout } from './Checkout'
-import { Confirm } from "./Confirm"
 import '../../styles/App.css'
 import { list } from '../../data'
 
@@ -32,7 +29,6 @@ const App = props => {
   return (
     <Fragment>
       <Router>
-      <UserProfileContextProvider>
       <Navbar filter={filterResults} setFiltering={setFiltering} count={count}/>
       
           {/* Routes */}
@@ -45,9 +41,6 @@ const App = props => {
               filtered={filtered}/>
             }/>
           <Route path="/cart" component={CartPage}/>
-          <Route path="/checkout" component={Checkout}/>
-          <Route path="/delivery" component={Confirm} />
-          </UserProfileContextProvider>
        </Router>
     </Fragment>
   );

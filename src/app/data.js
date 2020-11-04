@@ -5,8 +5,7 @@ const fruits = [
     name: "Citrons",
     price: 0.99,
     unit: "pièce",
-    image: "citron.png",
-    description:"le citron s'a pique"
+    image: "citron.png"
   },
   {
     ref: "fruits_2",
@@ -102,7 +101,7 @@ const legumes = [
   },
   {
     ref: "legumes_4",
-    name: "Tomate",
+    name: "Tomato",
     category: 1,
     price: 3.99,
     unit: "kg",
@@ -146,7 +145,7 @@ const fresh = [
   {
     ref: "fresh_1",
     category: 2,
-    name: "Lait",
+    name: "Milk",
     price: 2.99,
     unit: "pièce",
     image: "milk.png"
@@ -164,7 +163,7 @@ const fresh = [
     category: 2,
     name: "Oeufs",
     price: 3.99,
-    unit: "Boite de 12",
+    unit: "les douzes",
     image: "eggs.png"
   },
   {

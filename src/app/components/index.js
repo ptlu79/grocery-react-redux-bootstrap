@@ -7,7 +7,7 @@ export const Navbar = ({ filter, setFiltering  }) => {
   const items = useSelector(state => state.items)
   return (
     <nav className="navbar orange navbar-expand-lg navbar-light bg-light fixed-top">
-        <Link  className="navbar-brand crimson" to="/">   <i class="fas fa-shopping-cart"></i> Mon magasin en Ligne</Link>
+        <Link  className="navbar-brand crimson" to="/">  <img  src={process.env.PUBLIC_URL + `/assets/logo_broyer_gregory.png`}/>  Mon marché en Ligne</Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -27,7 +27,7 @@ export const Navbar = ({ filter, setFiltering  }) => {
               <input
                 className="form-control mr-sm-2"
                 type="search"
-                placeholder="Rechercher un produit"
+                placeholder="Search"
                 aria-label="Search"
                 onChange={(e) => {
                   setFiltering(e.target.value.length > 0)
@@ -76,7 +76,7 @@ export const Card = props => {
             </div>
             <div className="col-sm-6">
               <p>
-                  € {item.price}/{item.unit}
+                  €{item.price}/{item.unit}
               </p>
               <button className="btn btn-warning btn-sm" data-toggle="modal" data-target={`#${item.ref}`}>view product</button>
             </div>
@@ -128,13 +128,14 @@ export const Modal = ({ item }) => {
                     process.env.PUBLIC_URL +
                     `/assets/${item.category}/${item.image}`
                   }
-                  alt={item.name}
+                  alt="Citron"
                 />
               </div>
 
               <div className="col-sm">
                 <p class="lead">
-                  {item.description}
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore
                 </p>
                   <h3 className="price">€{item.price}/{item.unit}</h3> <br />
                 <div
@@ -166,7 +167,7 @@ export const Modal = ({ item }) => {
               type="button"
               class="btn btn-secondary"
               data-dismiss="modal">
-              Fermer
+              Close
             </button>
             <button
               type="button"
@@ -174,7 +175,7 @@ export const Modal = ({ item }) => {
               data-dismiss="modal"
               onClick={()=> add(item, qty)}
             >
-              Ajouter au panier
+              Add to Cart
             </button>
           </div>
         </div>

@@ -29,13 +29,13 @@ const Row = (props) => {
             alt={item.name}
           />
         </td>
-        <td>{item.name}</td>
+        <td>{item.ref}</td>
         <td>€{item.price}</td>
         <td>
           <div className="btn-group" role="group" aria-label="Basic example">
             <button
               type="button"
-              className="btn btn-danger"
+              className="btn btn-secondary"
               onClick={() => {
                 if (qty > 1) {update('decrement') }
               }}
@@ -45,7 +45,7 @@ const Row = (props) => {
             <span className="btn btn-light">{qty}</span>
             <button
               type="button"
-              className="btn btn-danger"
+              className="btn btn-secondary"
               onClick={() =>  {update('increment')}}
               >
               +
@@ -107,15 +107,15 @@ export const CartPage = () => {
 
           <div className="col-sm-3 order-summary">
             <ul className="list-group">
-              < li className = "list-group-item" >Récapitulatif de la commande </li>
+              <li className="list-group-item">Order Summary</li>
 
               <li className="list-group-item">
                 <ul className="list-group flex">
-                  <li className="text-left">Sous-total</li>
+                  <li className="text-left">Subtotal</li>
                   <li className="text-right">€{subTotal.toFixed(2)}</li>
                 </ul>
                 <ul className="list-group flex">
-                  <li className="text-left">Frais de livraison</li>
+                  <li className="text-left">shipping</li>
                   <li className="text-right">€{shipping.toFixed(2)}</li>
                 </ul>
                 <ul className="list-group flex">
@@ -132,9 +132,15 @@ export const CartPage = () => {
                 </ul>
               </li>
             </ul>
-              <Link to="/checkout" className={`white btn btn-light btn-lg btn-block checkout ${!items.length && 'disabled'} bg-crimson`}>
-                Valider
-              </Link>
+            <button
+              type="button"
+              className="btn btn-light btn-lg btn-block checkout bg-crimson"
+              disabled="true"
+            >
+              <a href="#" className="white">
+                Checkout
+              </a>
+            </button>
           </div>
         </div>
         </div>
